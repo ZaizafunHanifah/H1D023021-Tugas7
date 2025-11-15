@@ -8,9 +8,9 @@ Aplikasi Flutter yang mengimplementasikan sistem autentikasi, navigasi routes, s
 - **Shift**: C
 - **Shift KRS**: A
 
-## 📁 Struktur Kode
+## Struktur Kode
 
-### 📄 `lib/main.dart`
+### `lib/main.dart`
 File utama aplikasi yang mengatur konfigurasi aplikasi dan routing.
 
 ```dart
@@ -70,7 +70,7 @@ final GoRouter _router = GoRouter(
 - Logic redirect memeriksa status login dari SharedPreferences
 - Routes didefinisikan untuk setiap halaman aplikasi
 
-### 📄 `lib/login_page.dart`
+### `lib/login_page.dart`
 Halaman login dengan form autentikasi dan animasi.
 
 ```dart
@@ -132,7 +132,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
 - Penyimpanan status login ke SharedPreferences
 - Navigasi ke home menggunakan `context.go()`
 
-### 📄 `lib/home_page.dart`
+### `lib/home_page.dart`
 Halaman utama dengan drawer dan bottom navigation.
 
 ```dart
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
 - Bottom navigation bar untuk navigasi cepat
 - Fungsi logout yang clear session dan redirect ke login
 
-### 📄 `lib/profile_page.dart`
+### `lib/profile_page.dart`
 Halaman profil yang menampilkan informasi personal.
 
 ```dart
@@ -200,7 +200,7 @@ class _ProfilePageState extends State<ProfilePage> {
 - Menampilkan informasi lengkap developer
 - Bottom navigation dengan current index = 1 (Profile)
 
-### 📄 `lib/settings_page.dart`
+### `lib/settings_page.dart`
 Halaman pengaturan dengan berbagai opsi konfigurasi.
 
 ```dart
@@ -228,7 +228,7 @@ class _SettingsPageState extends State<SettingsPage> {
 - Snackbar feedback saat menyimpan settings
 - Drawer dan bottom navigation konsisten
 
-## 📦 Dependencies
+## Dependencies
 
 ### `pubspec.yaml`
 ```yaml
@@ -246,66 +246,11 @@ dependencies:
 - `go_router`: Routing deklaratif dengan support deep linking dan redirect
 - `cupertino_icons`: Icon pack untuk iOS style icons
 
-## 🎨 Tema dan Styling
-
-### Background Gradient
-Semua halaman menggunakan gradient background yang sama:
-```dart
-decoration: const BoxDecoration(
-  gradient: LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-    colors: [Colors.blue, Colors.white],
-  ),
-),
-```
-
-### Color Scheme
-- **Primary**: `Colors.blue`
-- **Secondary**: `Colors.purple`
-- **Accent**: Putih untuk kontras
-
-### Animasi
-- Fade-in animation pada login page
-- Smooth transitions menggunakan Go Router
-- Material Design transitions
-
-## 🚀 Cara Menjalankan
-
-1. **Install Dependencies**:
-   ```bash
-   flutter pub get
-   ```
-
-2. **Run Aplikasi**:
-   ```bash
-   flutter run -d chrome  # Web
-   flutter run -d android  # Android device/emulator
-   flutter run -d ios      # iOS simulator
-   ```
-
-3. **Login Credentials**:
+**Login Credentials**:
    - Username: `admin`
    - Password: `password`
 
-## 📱 Fitur Navigasi
-
-### Bottom Navigation Bar
-- **Home**: Halaman utama dengan welcome message
-- **Profile**: Informasi personal developer
-- **Settings**: Konfigurasi aplikasi
-
-### Drawer (Side Menu)
-- Header dengan avatar dan nama
-- Menu navigasi ke semua halaman
-- Logout functionality
-
-### Go Router Navigation
-- Declarative routing
-- Automatic redirect berdasarkan auth state
-- Deep linking support
-
-## 💾 Local Storage Implementation
+## Local Storage Implementation
 
 ```dart
 // Simpan status login
@@ -320,41 +265,3 @@ _username = prefs.getString('username') ?? 'User';
 await prefs.setBool('isLoggedIn', false);
 await prefs.remove('username');
 ```
-
-## 🔐 Authentication Flow
-
-1. **Login Page**: Form input username & password
-2. **Validation**: Check credentials (admin/password)
-3. **Storage**: Save login status to SharedPreferences
-4. **Redirect**: Navigate to home page
-5. **Session Check**: Redirect logic in GoRouter
-6. **Logout**: Clear storage and redirect to login
-
-## 📊 State Management
-
-- **Local State**: Menggunakan StatefulWidget untuk UI state
-- **Persistent State**: SharedPreferences untuk data yang perlu disimpan
-- **Navigation State**: GoRouter mengelola state routing
-
-## 🎯 Best Practices Implemented
-
-- **Separation of Concerns**: Setiap halaman dalam file terpisah
-- **Reusable Components**: Drawer dan bottom navigation konsisten
-- **Error Handling**: Form validation dan snackbar feedback
-- **Memory Management**: Dispose controllers dan animations
-- **Responsive Design**: Layout yang adaptif
-- **Material Design**: Mengikuti guidelines Flutter
-
-## 🔧 Development Notes
-
-- **Platform Support**: Android, iOS, Web
-- **Flutter Version**: 3.9.2+
-- **Dart Version**: 3.0+
-- **Architecture**: Widget-based dengan state management sederhana
-
----
-
-**Dibuat untuk**: Tugas 7 - Mata Kuliah Pemrograman Mobile
-**Tanggal**: November 2024
-**Framework**: Flutter
-**Language**: Dart
