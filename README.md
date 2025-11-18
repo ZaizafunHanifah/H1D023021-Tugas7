@@ -2,7 +2,7 @@
 
 Aplikasi Flutter yang mengimplementasikan sistem autentikasi, navigasi routes, side menu (drawer), dan penyimpanan lokal untuk tugas mata kuliah.
 
-## 👤 Informasi Developer
+## Informasi Developer
 - **Nama**: Zaizafun Hanifah Zainnur Hanun
 - **NIM**: H1D023021
 - **Shift**: C
@@ -265,3 +265,22 @@ _username = prefs.getString('username') ?? 'User';
 await prefs.setBool('isLoggedIn', false);
 await prefs.remove('username');
 ```
+
+## Tampilan APL
+
+<table>
+  <tr>
+    <td><img src="login.png" width="300"></td>
+    <td><img src="home.png" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="profile.png" width="300"></td>
+    <td><img src="settings.png" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="sidebar.png" width="300"></td>
+    <td></td>
+  </tr>
+</table>
+
+
